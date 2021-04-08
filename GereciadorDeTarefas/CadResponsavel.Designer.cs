@@ -33,15 +33,15 @@ namespace GereciadorDeTarefas
             System.Windows.Forms.Label idResponsavelLabel;
             System.Windows.Forms.Label nomeLabel;
             this.sistemagtBDDataSet = new GereciadorDeTarefas.SistemagtBDDataSet();
+            this.BTLimpar = new System.Windows.Forms.Button();
+            this.BTFechar = new System.Windows.Forms.Button();
+            this.LBTitulo = new System.Windows.Forms.Label();
+            this.BTSalvar = new System.Windows.Forms.Button();
             this.responsavelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.responsavelTableAdapter = new GereciadorDeTarefas.SistemagtBDDataSetTableAdapters.ResponsavelTableAdapter();
             this.tableAdapterManager = new GereciadorDeTarefas.SistemagtBDDataSetTableAdapters.TableAdapterManager();
             this.idResponsavelLabel1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.BTLimpar = new System.Windows.Forms.Button();
-            this.BTFechar = new System.Windows.Forms.Button();
-            this.LBTitulo = new System.Windows.Forms.Label();
-            this.BTSalvar = new System.Windows.Forms.Button();
             idResponsavelLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sistemagtBDDataSet)).BeginInit();
@@ -52,63 +52,26 @@ namespace GereciadorDeTarefas
             // 
             idResponsavelLabel.AutoSize = true;
             idResponsavelLabel.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idResponsavelLabel.Location = new System.Drawing.Point(159, 90);
+            idResponsavelLabel.Location = new System.Drawing.Point(175, 93);
             idResponsavelLabel.Name = "idResponsavelLabel";
-            idResponsavelLabel.Size = new System.Drawing.Size(66, 16);
-            idResponsavelLabel.TabIndex = 1;
-            idResponsavelLabel.Text = "Código:";
+            idResponsavelLabel.Size = new System.Drawing.Size(124, 16);
+            idResponsavelLabel.TabIndex = 18;
+            idResponsavelLabel.Text = "Id Responsavel:";
             // 
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
             nomeLabel.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeLabel.Location = new System.Drawing.Point(166, 131);
+            nomeLabel.Location = new System.Drawing.Point(175, 122);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(56, 16);
-            nomeLabel.TabIndex = 3;
+            nomeLabel.TabIndex = 20;
             nomeLabel.Text = "Nome:";
             // 
             // sistemagtBDDataSet
             // 
             this.sistemagtBDDataSet.DataSetName = "SistemagtBDDataSet";
             this.sistemagtBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // responsavelBindingSource
-            // 
-            this.responsavelBindingSource.DataMember = "Responsavel";
-            this.responsavelBindingSource.DataSource = this.sistemagtBDDataSet;
-            // 
-            // responsavelTableAdapter
-            // 
-            this.responsavelTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CadastroTableAdapter = null;
-            this.tableAdapterManager.ResponsavelTableAdapter = this.responsavelTableAdapter;
-            this.tableAdapterManager.StatusTableAdapter = null;
-            this.tableAdapterManager.TarefaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = GereciadorDeTarefas.SistemagtBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // idResponsavelLabel1
-            // 
-            this.idResponsavelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.responsavelBindingSource, "IdResponsavel", true));
-            this.idResponsavelLabel1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idResponsavelLabel1.Location = new System.Drawing.Point(231, 90);
-            this.idResponsavelLabel1.Name = "idResponsavelLabel1";
-            this.idResponsavelLabel1.Size = new System.Drawing.Size(100, 23);
-            this.idResponsavelLabel1.TabIndex = 2;
-            this.idResponsavelLabel1.Text = "label1";
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.responsavelBindingSource, "Nome", true));
-            this.nomeTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTextBox.Location = new System.Drawing.Point(234, 121);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(143, 26);
-            this.nomeTextBox.TabIndex = 4;
             // 
             // BTLimpar
             // 
@@ -138,7 +101,7 @@ namespace GereciadorDeTarefas
             // 
             this.LBTitulo.AutoSize = true;
             this.LBTitulo.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBTitulo.Location = new System.Drawing.Point(144, 9);
+            this.LBTitulo.Location = new System.Drawing.Point(142, 36);
             this.LBTitulo.Name = "LBTitulo";
             this.LBTitulo.Size = new System.Drawing.Size(223, 20);
             this.LBTitulo.TabIndex = 16;
@@ -156,19 +119,56 @@ namespace GereciadorDeTarefas
             this.BTSalvar.UseVisualStyleBackColor = true;
             this.BTSalvar.Click += new System.EventHandler(this.BTSalvar_Click);
             // 
+            // responsavelBindingSource
+            // 
+            this.responsavelBindingSource.DataMember = "Responsavel";
+            this.responsavelBindingSource.DataSource = this.sistemagtBDDataSet;
+            // 
+            // responsavelTableAdapter
+            // 
+            this.responsavelTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CadastroTableAdapter = null;
+            this.tableAdapterManager.ResponsavelTableAdapter = this.responsavelTableAdapter;
+            this.tableAdapterManager.StatusTableAdapter = null;
+            this.tableAdapterManager.TarefaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = GereciadorDeTarefas.SistemagtBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // idResponsavelLabel1
+            // 
+            this.idResponsavelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.responsavelBindingSource, "IdResponsavel", true));
+            this.idResponsavelLabel1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idResponsavelLabel1.Location = new System.Drawing.Point(305, 93);
+            this.idResponsavelLabel1.Name = "idResponsavelLabel1";
+            this.idResponsavelLabel1.Size = new System.Drawing.Size(100, 23);
+            this.idResponsavelLabel1.TabIndex = 19;
+            this.idResponsavelLabel1.Text = "label1";
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.responsavelBindingSource, "Nome", true));
+            this.nomeTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeTextBox.Location = new System.Drawing.Point(305, 119);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(100, 26);
+            this.nomeTextBox.TabIndex = 21;
+            // 
             // CadResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 248);
-            this.Controls.Add(this.BTSalvar);
-            this.Controls.Add(this.LBTitulo);
-            this.Controls.Add(this.BTFechar);
-            this.Controls.Add(this.BTLimpar);
+            this.ClientSize = new System.Drawing.Size(501, 256);
             this.Controls.Add(idResponsavelLabel);
             this.Controls.Add(this.idResponsavelLabel1);
             this.Controls.Add(nomeLabel);
             this.Controls.Add(this.nomeTextBox);
+            this.Controls.Add(this.BTSalvar);
+            this.Controls.Add(this.LBTitulo);
+            this.Controls.Add(this.BTFechar);
+            this.Controls.Add(this.BTLimpar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CadResponsavel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -184,14 +184,14 @@ namespace GereciadorDeTarefas
         #endregion
 
         private SistemagtBDDataSet sistemagtBDDataSet;
+        private System.Windows.Forms.Button BTLimpar;
+        private System.Windows.Forms.Button BTFechar;
+        private System.Windows.Forms.Label LBTitulo;
+        private System.Windows.Forms.Button BTSalvar;
         private System.Windows.Forms.BindingSource responsavelBindingSource;
         private SistemagtBDDataSetTableAdapters.ResponsavelTableAdapter responsavelTableAdapter;
         private SistemagtBDDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label idResponsavelLabel1;
         private System.Windows.Forms.TextBox nomeTextBox;
-        private System.Windows.Forms.Button BTLimpar;
-        private System.Windows.Forms.Button BTFechar;
-        private System.Windows.Forms.Label LBTitulo;
-        private System.Windows.Forms.Button BTSalvar;
     }
 }

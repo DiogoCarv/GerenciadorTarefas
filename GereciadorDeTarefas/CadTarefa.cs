@@ -16,21 +16,6 @@ namespace GereciadorDeTarefas
         {
             InitializeComponent();
         }
-        private void tarefaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tarefaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
-
-        }
-
-        private void tarefaBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tarefaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
-
-        }
 
         private void CadTarefa_Load(object sender, EventArgs e)
         {
@@ -45,6 +30,7 @@ namespace GereciadorDeTarefas
 
         private void BTFechar_Click(object sender, EventArgs e)
         {
+            this.tarefaBindingSource.CancelEdit();
             this.Close();
         }
 

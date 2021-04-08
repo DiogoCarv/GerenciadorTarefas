@@ -17,31 +17,17 @@ namespace GereciadorDeTarefas
             InitializeComponent();
         }
 
-        private void responsavelBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.responsavelBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
-
-        }
-
-        private void responsavelBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.responsavelBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
-
-        }
-
         private void CadResponsavel_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemagtBDDataSet.Responsavel'. Você pode movê-la ou removê-la conforme necessário.
             this.responsavelTableAdapter.Fill(this.sistemagtBDDataSet.Responsavel);
+            this.responsavelBindingSource.AddNew();
 
         }
 
         private void BTFechar_Click(object sender, EventArgs e)
         {
+            this.responsavelBindingSource.CancelEdit();
             this.Close();
         }
 

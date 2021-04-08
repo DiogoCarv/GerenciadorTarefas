@@ -17,23 +17,9 @@ namespace GereciadorDeTarefas
             InitializeComponent();
         }
 
-        private void statusBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.statusBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
-
-        }
-
-        private void CadStatus_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'sistemagtBDDataSet.Status'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusTableAdapter.Fill(this.sistemagtBDDataSet.Status);
-
-        }
-
         private void BTFechar_Click(object sender, EventArgs e)
         {
+            this.statusBindingSource.CancelEdit();
             this.Close();
         }
 
@@ -54,6 +40,21 @@ namespace GereciadorDeTarefas
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
+
+        private void statusBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.statusBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
+
+        }
+
+        private void CadStatus_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'sistemagtBDDataSet.Status'. Você pode movê-la ou removê-la conforme necessário.
+            this.statusTableAdapter.Fill(this.sistemagtBDDataSet.Status);
+            this.statusBindingSource.AddNew();
         }
     }
 }

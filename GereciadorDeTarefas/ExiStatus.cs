@@ -29,7 +29,12 @@ namespace GereciadorDeTarefas
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemagtBDDataSet.Status'. Você pode movê-la ou removê-la conforme necessário.
             this.statusTableAdapter.Fill(this.sistemagtBDDataSet.Status);
+            this.statusBindingSource.AddNew();
+        }
 
+        private void BTAtualizar_Click(object sender, EventArgs e)
+        {
+            this.tableAdapterManager.UpdateAll(this.sistemagtBDDataSet);
         }
     }
 }

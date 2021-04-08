@@ -37,6 +37,7 @@ namespace GereciadorDeTarefas
             this.statusDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sistemagtBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusDataGridView)).BeginInit();
@@ -91,11 +92,25 @@ namespace GereciadorDeTarefas
             this.dataGridViewTextBoxColumn2.HeaderText = "Descricao";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // BTAtualizar
+            // 
+            this.BTAtualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTAtualizar.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTAtualizar.Location = new System.Drawing.Point(12, 263);
+            this.BTAtualizar.Name = "BTAtualizar";
+            this.BTAtualizar.Size = new System.Drawing.Size(102, 44);
+            this.BTAtualizar.TabIndex = 12;
+            this.BTAtualizar.Text = "Atualizar";
+            this.BTAtualizar.UseVisualStyleBackColor = false;
+            this.BTAtualizar.Click += new System.EventHandler(this.BTAtualizar_Click);
+            // 
             // ExiStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 319);
+            this.Controls.Add(this.BTAtualizar);
             this.Controls.Add(this.statusDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ExiStatus";
@@ -118,5 +133,6 @@ namespace GereciadorDeTarefas
         private System.Windows.Forms.DataGridView statusDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button BTAtualizar;
     }
 }
